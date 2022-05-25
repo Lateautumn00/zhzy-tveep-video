@@ -7,7 +7,7 @@
  * @Reference:
 -->
 
-# electron-vue3-typescript
+# zhzy-tveep-video
 
 ## 开发环境
 
@@ -71,4 +71,12 @@ yarn run electron:build 打包后
 将dist_electron 目录下的 exe文件 和 latest.yml上传到 服务器指定目录下
 
 升级地址 修改 .env.development/.env.production  VUE_APP_UPLOAD
+```
+
+### 解决 electron 下载慢
+
+```
+在终端中敲入： npm set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+或者
+yarn config set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 ```
