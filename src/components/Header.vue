@@ -2,12 +2,12 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 15:42:12
- * @LastEditTime: 2022-05-25 09:26:02
+ * @LastEditTime: 2022-05-25 15:01:19
  * @LastEditors: lanchao
  * @Reference: 
 -->
 <template>
-  <div class="label">{{ label }}</div>
+  <div class="label">{{ name }}</div>
   <div class="header">
     <el-icon @click="semiWin"><SemiSelect /></el-icon>
     <el-icon v-if="isMax" @click="fullWin"><FullScreen /></el-icon>
@@ -20,12 +20,12 @@
 import { Options, Vue } from 'vue-class-component'
 @Options({
   props: {
-    label: String
+    name: String
   }
 })
 export default class HeaderComponent extends Vue {
   isMax = false //是否最大化
-  label = '' //视频标题
+  name = '' //视频标题
   closeWin = () => {
     ;(window as any).ipcRenderer.send('app-close')
   }

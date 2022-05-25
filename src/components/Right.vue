@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 17:14:09
- * @LastEditTime: 2022-05-24 19:20:47
+ * @LastEditTime: 2022-05-25 16:35:30
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -17,7 +17,7 @@
       <!-- <source src="" type="application/x-mpegURL" /> -->
     </video>
     <div class="text" v-if="text !== ''">
-      正在观看{{ label }}直播 ,状态:{{ text }}...
+      正在观看{{ name }} ,状态:{{ text }}...
     </div>
   </div>
 </template>
@@ -29,18 +29,32 @@ import 'videojs-contrib-hls'
 import 'video.js/dist/video-js.css'
 export default class RightComponent extends Vue {
   text = ''
-  label = ''
+  name = ''
+  suffix = '' //后缀
   mounted() {
     this.$nextTick(function () {
       this.getVideo()
     })
   }
   player(data: any) {
-    this.label = data.label
     let myVideo = Videojs('my-video')
+    let type = 'video/mp4'
+    this.name = data.name
+    if (data.src) {
+      const srcArray = data.src.split('.')
+      this.suffix = srcArray.pop().toLowerCase()
+    }
+
+    if (this.suffix === 'mp4') {
+      type = 'video/mp4'
+    } else if (this.suffix === 'm3u8') {
+      type = 'application/x-mpegURL'
+    } else {
+      throw new Error('格式错误')
+    }
     myVideo.src([
       {
-        type: 'application/x-mpegURL',
+        type: type,
         src: data.src
       }
     ])

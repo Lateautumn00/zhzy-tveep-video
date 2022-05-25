@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 10:27:49
- * @LastEditTime: 2022-05-25 09:30:56
+ * @LastEditTime: 2022-05-25 15:02:56
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -10,7 +10,7 @@
   <div class="common-layout">
     <el-container>
       <el-header v-if="isElectron">
-        <HeaderComponent :label="label" />
+        <HeaderComponent :name="name" />
       </el-header>
       <el-container>
         <el-aside width="200px">
@@ -29,7 +29,6 @@ import { Options, Vue } from 'vue-class-component'
 import HeaderComponent from '@/components/Header.vue'
 import LeftComponent from '@/components/Left.vue'
 import RightComponent from '@/components/Right.vue'
-import { ref } from 'vue'
 @Options({
   components: {
     LeftComponent,
@@ -38,11 +37,10 @@ import { ref } from 'vue'
   }
 })
 export default class HomeComponent extends Vue {
-  label = ''
-  rightRef = ref(null)
+  name = ''
   isElectron = process.env.IS_ELECTRON
   setList(data: any) {
-    this.label = data.label
+    this.name = data.name
     ;(this.$refs.rightRef as any).player(data)
   }
 }
