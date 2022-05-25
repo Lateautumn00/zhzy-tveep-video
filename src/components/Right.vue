@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 17:14:09
- * @LastEditTime: 2022-05-25 16:35:30
+ * @LastEditTime: 2022-05-25 18:48:57
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -41,7 +41,7 @@ export default class RightComponent extends Vue {
     let type = 'video/mp4'
     this.name = data.name
     if (data.src) {
-      const srcArray = data.src.split('.')
+      const srcArray = data.src.split('?')[0].split('.')
       this.suffix = srcArray.pop().toLowerCase()
     }
 
