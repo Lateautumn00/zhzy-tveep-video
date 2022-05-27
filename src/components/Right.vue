@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: lanchao
  * @Date: 2022-05-20 17:14:09
- * @LastEditTime: 2022-05-25 18:48:57
+ * @LastEditTime: 2022-05-26 10:34:47
  * @LastEditors: lanchao
  * @Reference: 
 -->
@@ -13,6 +13,11 @@
       class="video-js vjs-default-skin"
       width="100%"
       height="100%"
+      webkit-playsinline
+      playsinline
+      controlslist="nodownload"
+      x-webkit-airplay="allow"
+      x5-playsinline=""
     >
       <!-- <source src="" type="application/x-mpegURL" /> -->
     </video>

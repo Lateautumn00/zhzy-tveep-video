@@ -2,7 +2,7 @@
  * @Description: 直播视频源配置
  * @Author: lanchao
  * @Date: 2022-05-25 10:18:15
- * @LastEditTime: 2022-05-25 18:50:55
+ * @LastEditTime: 2022-05-26 10:32:29
  * @LastEditors: lanchao
  * @Reference:
  */
@@ -23,10 +23,10 @@ const tvList: TvList[] = [
   },
   {
     id: 10002,
-    name: '北京时间',
+    name: 'cctv',
     level: 1,
     isRemove: false,
-    src: 'https://hls.playlive.360.v.btime.com/live_btime_t3_r/0525xs_HD/index.m3u8'
+    src: 'https://cctvbdh5c.a.bdydns.com/live/cdrmcctv4_1/index.m3u8'
   },
   {
     id: 10003,
@@ -55,13 +55,6 @@ const tvList: TvList[] = [
     level: 1,
     isRemove: false,
     src: 'https://livealone302.iqilu.com/iqilu/sepd5678.m3u8'
-  },
-  {
-    id: 10007,
-    name: 'CCTV-1',
-    level: 1,
-    isRemove: false,
-    src: 'http://stream10.fjtv.net/cctv1/hd/live.m3u8?_upt=454fc7011653484257'
   }
 ]
 export default tvList
